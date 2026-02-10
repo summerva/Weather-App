@@ -1,8 +1,16 @@
 import Button from "./Button";
 
 const Header = (props) => {
-  const { weather, error, searchCity, onSearchChange, onSearch } = props;
-  
+  const {
+    weather,
+    error,
+    searchCity,
+    onSearchChange,
+    onSearch,
+    onThemeToggle,
+    theme,
+  } = props;
+
   const today = new Date();
   const formattedDate = today.toLocaleDateString("ru-RU", {
     year: "numeric",
@@ -10,23 +18,26 @@ const Header = (props) => {
     day: "numeric",
   });
 
-    const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
       onSearch(e);
     }
   };
 
   return (
     <div className="weather__header">
-      <div className="weather__search">
-        <input
-          type="text"
-          placeholder="Введите город"
-          value={searchCity}
-          onChange={(event) => onSearchChange(event.target.value)}
-          onKeyDown={handleKeyDown}
-        />
-        <Button onClick={onSearch}>Найти</Button>
+      <div className="weather__input">
+        <Button onClick={onThemeToggle}>{theme === "day" ? "🌙" : "☀️"}</Button>
+        <div className="weather__search">
+          <input
+            type="text"
+            placeholder="Введите город"
+            value={searchCity}
+            onChange={(event) => onSearchChange(event.target.value)}
+            onKeyDown={handleKeyDown}
+          />
+          <Button onClick={onSearch}>Найти</Button>
+        </div>
       </div>
       {error && <div className="error">{error}</div>}
       {/* {weather && <h1>{weather.city}</h1>} */}

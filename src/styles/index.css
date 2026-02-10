@@ -8,13 +8,14 @@ body {
   padding: 20px 100px;
   font-family: "Inter", sans-serif;
   background: var(--color-white-2);
+  color: var(--color-text);
 }
 
 .weather {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: white;
+  background: var(--color-bg);
   border: var(--border-black);
   border-radius: 10px;
   min-width: 600px;
@@ -34,9 +35,14 @@ body {
   width: 150px;
 }
 
+.weather__input{
+  display: flex;
+  gap: var(--padding-inner);
+}
+
 .weather__search {
   display: flex;
-  gap: 5px;
+  gap: var(--padding-inner);
 }
 
 .weather__search input {
@@ -44,6 +50,8 @@ body {
   border-radius: var(--border);
   padding: var(--padding-inner);
   outline: none;
+  background: var(--color-bg);
+  color: var(--color-text);
 
   &:focus,
   &:hover {
@@ -52,7 +60,7 @@ body {
 }
 
 .button {
-  background-color: var(--color-dark-1);
+  background-color: var(--color-primary);
   border: var(--border-white);
   border-radius: var(--border);
   padding: var(--padding-inner);
@@ -99,10 +107,12 @@ body {
   border-radius: var(--border);
   padding: var(--padding-inner);
   font-weight: 600;
+  background: var(--color-bg);
+  color: var(--color-text);
 }
 
 .error {
-  color: red;
+  color: #ef4444;
   font-size: 20px;
   font-weight: 600;
   margin-top: 10px;
@@ -121,4 +131,6 @@ body {
   padding: var(--padding-inner);
   border: var(--border-dark);
   border-radius: var(--border);
+  background: var(--color-bg);
+  color: var(--color-text);
 }

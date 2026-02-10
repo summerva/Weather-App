@@ -1,14 +1,30 @@
-:root{
-    --color-white-1: white;
-    --color-white-2: #eaece5;
-
-    --color-dark-1: #3b3a30;
-
-    --border-black: black solid 1px;
-    --border-dark: #3b3a30 solid 1px;
-    --border-white: #eaece5 solid 1px;
-    --border: 10px;
-
-    --padding-inner: 10px;
+:root {
+  /* Основные цвета */
+  --color-primary: #3b82f6;
+  --color-secondary: #6b7280;
+  
+  /* Дневная тема (по умолчанию) */
+  --color-bg: #ffffff;
+  --color-text: #1f2937;
+  --color-border: #d1d5db;
+  --color-white-1: #ffffff;
+  --color-white-2: #f3f4f6;
+  --color-dark-1: #111827;
+  
+  /* Общие переменные */
+  --border: 8px;
+  --border-dark: 2px solid var(--color-border);
+  --border-white: 2px solid var(--color-white-1);
+  --border-black: 2px solid var(--color-dark-1);
+  --padding-inner: 15px;
 }
 
+[data-theme="night"] {
+  /* Ночная тема */
+  --color-bg: #111827;
+  --color-text: #f3f4f6;
+  --color-border: #374151;
+  --color-white-1: #1f2937;
+  --color-white-2: #374151;
+  --color-dark-1: #f3f4f6;
+}

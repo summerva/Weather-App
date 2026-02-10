@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Header from "./components/Header";
 import WeatherMain from "./components/WeatherMain";
 import { fetchWeather } from "./services/api";
@@ -10,6 +10,7 @@ const App = () => {
   const [searchCity, setSearchCity] = useState("");
   const [allWeather, setAllWeather] = useState([]);
   const [error, setError] = useState("");
+  const [theme, setTheme] = useState("day");
 
   useEffect(() => {
     fetchWeather().then((data) => {
@@ -17,6 +18,10 @@ const App = () => {
       setWeather(data[0]);
     });
   }, []);
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+  }, [theme]);
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -37,6 +42,10 @@ const App = () => {
     }
   };
 
+  const toggleTheme = useCallback(() => {
+    setTheme((prev) => (prev === "day" ? "night" : "day"));
+  }, []);
+
   const clearError = () => {
     setError("");
   };
@@ -51,6 +60,8 @@ const App = () => {
           onSearchChange={setSearchCity}
           onSearch={handleSearch}
           onClearError={clearError}
+          onThemeToggle={toggleTheme}
+          theme={theme}
         />
         {!error ? (
           <>
