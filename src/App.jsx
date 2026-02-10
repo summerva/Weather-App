@@ -10,7 +10,10 @@ const App = () => {
   const [searchCity, setSearchCity] = useState("");
   const [allWeather, setAllWeather] = useState([]);
   const [error, setError] = useState("");
-  const [theme, setTheme] = useState("day");
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem("theme")
+    return savedTheme || "day"
+  })
 
   useEffect(() => {
     fetchWeather().then((data) => {
@@ -21,6 +24,7 @@ const App = () => {
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   const handleSearch = (e) => {

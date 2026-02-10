@@ -33,6 +33,7 @@ body {
 .weather__main img {
   height: 150px;
   width: 150px;
+  filter: var(--icon-filter);
 }
 
 .weather__input{
@@ -75,7 +76,7 @@ body {
   &:active {
     transition-duration: 0.2s;
     scale: 1.05;
-  }
+  } 
 }
 
 .weather__main {

@@ -17,6 +17,8 @@
   --border-white: 2px solid var(--color-white-1);
   --border-black: 2px solid var(--color-dark-1);
   --padding-inner: 15px;
+
+  --icon-filter: brightness(0);
 }
 
 [data-theme="night"] {
@@ -27,4 +29,6 @@
   --color-white-1: #1f2937;
   --color-white-2: #374151;
   --color-dark-1: #f3f4f6;
+  --icon-filter: brightness(0) invert(1); 
+
 }
