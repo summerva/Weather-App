@@ -1,0 +1,14 @@
+:root{
+    --color-white-1: white;
+    --color-white-2: #eaece5;
+
+    --color-dark-1: #3b3a30;
+
+    --border-black: black solid 1px;
+    --border-dark: #3b3a30 solid 1px;
+    --border-white: #eaece5 solid 1px;
+    --border: 10px;
+
+    --padding-inner: 10px;
+}
+

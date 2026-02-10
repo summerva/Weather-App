@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Space+Grotesk:wght@300..700&display=swap");
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  min-height: 100vh;
+  padding: 20px 100px;
+  font-family: "Inter", sans-serif;
+  background: var(--color-white-2);
+}
+
+.weather {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: white;
+  border: var(--border-black);
+  border-radius: 10px;
+  min-width: 600px;
+  padding: 50px;
+}
+
+.weather__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather__main img {
+  height: 150px;
+  width: 150px;
+}
+
+.weather__search {
+  display: flex;
+  gap: 5px;
+}
+
+.weather__search input {
+  border: var(--border-dark);
+  border-radius: var(--border);
+  padding: var(--padding-inner);
+  outline: none;
+
+  &:focus,
+  &:hover {
+    background-color: var(--color-white-2);
+  }
+}
+
+.button {
+  background-color: var(--color-dark-1);
+  border: var(--border-white);
+  border-radius: var(--border);
+  padding: var(--padding-inner);
+  font-weight: 600;
+  color: var(--color-white-1);
+
+  &:hover {
+    transition-duration: 0.2s;
+    opacity: 0.8;
+  }
+
+  &:active {
+    transition-duration: 0.2s;
+    scale: 1.05;
+  }
+}
+
+.weather__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather__text {
+  text-align: center;
+  margin-bottom: 0px;
+}
+
+.weather__day {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.card__day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  border: var(--border-dark);
+  border-radius: var(--border);
+  padding: var(--padding-inner);
+  font-weight: 600;
+}
+
+.error {
+  color: red;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.weather__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.info__block {
+  font-size: 20px;
+  min-width: 200px;
+  padding: var(--padding-inner);
+  border: var(--border-dark);
+  border-radius: var(--border);
+}
